@@ -1,0 +1,143 @@
+@font-face {
+    font-family: IRANY;
+    src:url('IRANYekanBlack.ttf')
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    font-family: IRANYekan;
+}
+a{
+    color: #222222!important;
+}
+a:hover{
+    text-decoration: none!important;
+    color: #222222!important;
+}
+#box{
+    width: 100%;
+    height: auto;
+}
+#to_box{
+    width: 100%;
+    max-width:1366px;
+    height: 100px;
+    margin: auto;
+}
+.err_alert{
+    text-align: center;
+    padding: 5px;
+    direction: rtl;
+    background-color: #ff7a7a;
+    color: white;
+    display: block;
+}
+.object_center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.object_center_span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn_BLUE{
+    background-color: #0a3fcd;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 20px;
+    border: none;
+    outline: none;
+}
+.btn_BLUE:hover{
+    background-color: #1349d4;
+}
+.btn_RED{
+    background-color: #ff5454;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 20px;
+    border: none;
+    outline: none;
+}
+.btn_RED:hover{
+    background-color: #ff6767;
+}
+.btn_ALERT{
+    border:1px solid #b0b0b0;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 20px;
+    outline: none;
+}
+.btn_ALERT:hover{
+    background-color: #b0b0b0;
+}
+.btn_ORANGE{
+    background-color: #ffb62c;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 20px;
+    border: none;
+    outline: none;
+}
+.btn_ORANGE:hover{
+    background-color: #ffbd45;
+}
+.btn_GREEN{
+    background-color: #30b830;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 20px;
+    border: none;
+    outline: none;
+}
+.btn_GREEN:hover{
+    background-color: #36c436;
+}
+.justify-between a{
+    background-color: #30b830;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 20px;
+    border: none;
+    margin: 0 20px;
+    outline: none;
+}
+.rounded-md{
+    background-color: #ff5c5c;
+    color: white;
+    border-radius: 5px;
+    margin: 0 20px;
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+}
+.Ul{
+    margin: 0;
+    padding: 0;
+}
+.btn_Border_Black_Small{
+    border: 1px solid #4f4f4f;
+    border-radius: 3px;
+    padding: 7px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_Border_Black_Bug{
+    border: 1px solid #4f4f4f;
+    border-radius: 3px;
+    transition: 0.5s;
+    padding: 9px 30px;
+    cursor: pointer;
+}
+.btn_Border_Black_Bug:hover , .btn_Border_Black_Small:hover{
+    background-color:#4f4f4f ;
+    color:white;
+    border-radius: 5px;
+}

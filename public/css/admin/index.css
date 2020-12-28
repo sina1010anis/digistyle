@@ -1,0 +1,736 @@
+#to_box header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: #f6f6f6;
+}
+
+#ul_PL {
+    margin: 0 20px;
+    padding: 0;
+}
+
+#icon_page_tree {
+    position: absolute;
+    font-size: 20px;
+    left: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+
+#Page_Tree_Category {
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    max-height: 500px;
+    position: absolute;
+    top: 50%;
+    z-index: 11;
+    display: none;
+    padding: 10px;
+    box-sizing: border-box;
+    left: 50%;
+    overflow-y: scroll;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+#P_Item_View {
+    margin-top: 20px;
+}
+
+#Page_To_Page {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0.5;
+    z-index: 10;
+    background-color: #515151;
+}
+
+#icon_page_close {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+
+#ul_PL li {
+    list-style-type: none;
+    float: left;
+    margin: 0 30px 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#ul_PR {
+    margin: 0 20px;
+    padding: 0;
+}
+
+#ul_PR li {
+    list-style-type: none;
+    float: right;
+    margin: 0 30px 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#ul_PR li input {
+    width: 200px;
+    direction: rtl;
+    border: none;
+    height: 20px;
+    margin: 0;
+    padding: 5px;
+    text-align: right;
+    color: white;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #dddddd;
+    box-sizing: border-box;
+}
+
+#ul_PR li button {
+    margin: 0;
+    position: relative;
+    right: 5px;
+    border: none;
+    width: 30px;
+    background-color: #dddddd;
+    height: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    padding: 0;
+}
+
+.ul_icon_header li > i {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 50%;
+    color: white;
+    justify-content: center;
+    background-color: #1a202c;
+    transition: 0.5s;
+}
+
+.ul_icon_header li > i:hover {
+    box-shadow: rgba(134, 134, 134, 0.5) 1px 1px 10px;
+}
+
+#ul_PR li form {
+    margin-top: 12px;
+
+}
+
+#View_Set {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 76px;
+    justify-content: space-around !important;
+}
+
+#View_Set span {
+    float: right;
+    list-style: none;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 180px;
+    border-radius: 10px;
+    border: 2px solid #b9c7ff;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+#View_Set span:hover {
+    transform: translate(0, -10px);
+    background-color: #b9c7ff;
+}
+
+#View_Set span p i {
+    font-size: 45px;
+    color: #b9c7ff;
+}
+
+#View_Set span p {
+    color: #b9c7ff;
+}
+
+.View_SET_P {
+    transition: 0.4s;
+}
+
+#View_Set span:hover .View_SET_P {
+    color: white;
+}
+
+.View_Table_Panel_admin {
+    width: 95%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: rgba(74, 74, 74, 0.5) 1px 1px 10px;
+    background-color: #f5f5f5;
+}
+
+#Menu_Left {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    background-color: #1a202c;
+    overflow-y: scroll;
+    display: none;
+    right: 0;
+    top: 22px;
+    padding: 30px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    z-index: 9;
+}
+
+.ul_menu_right_panel_admin, .ul_menu_right_panel_admin_to_ul_A {
+    margin: 0;
+    padding: 0;
+}
+
+.ul_menu_right_panel_admin > li {
+    list-style: none;
+    text-align: right;
+    color: white;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.ul_menu_right_panel_admin_to_ul_A > li {
+    text-align: right;
+    color: #dbdbdb;
+    margin: 20px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.ul_menu_right_panel_admin_to_ul_A > li a {
+    color: #c8c8c8;
+    margin-right: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.ul_menu_right_panel_admin_to_ul_A {
+    display: none;
+}
+
+#Shit_New_Category , #Shit_New_Image {
+    width: 98%;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 10px;
+    overflow: hidden;
+}
+#Shit_New_Image{
+    height: auto!important;
+ }
+#Shit_New_Image #PartOne{
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    float: right;
+}
+#Shit_New_Image input  ,#Shit_New_Image select{
+    width: 100%;
+    height: 45px;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#Shit_New_Image #PartTow{
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#Shit_New_Brand ,#Shit_New_User  ,#Shit_Show_User, #Shit_ViewAll_User ,#Shit_View_Brand  , #Shit_Edit_Brand , #Shit_One_Product {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 10px;
+    overflow: hidden;
+}
+#Shit_View_Brand , #Shit_ViewAll_User{
+    width: 98%!important;
+}
+ #Shit_New_User , #Shit_One_Product{
+    width: 80%!important;
+}
+ #Shit_Show_User *{text-align: center;direction: rtl}
+ #Shit_One_Product *{text-align: center;direction: rtl}
+ #Shit_New_User input , #Shit_New_User select , #Shit_One_Product select{
+     width: 49.5%;
+     border: 1px solid #cfcfcf;
+     border-radius: 10px;
+     margin-top: 20px;
+     outline: none;
+     height: 40px;
+     text-align: center;
+     padding: 2px 10px;
+     font-size: 15px;
+     background-color: unset;
+
+ }
+#Shit_New_Category_Part1 {
+    width: 33.33%;
+    height: 100%;
+    float: right;
+    padding: 20px;
+    box-sizing: border-box;
+    border-left: 1px solid #ececec;
+
+}
+#Shit_New_User button{
+    padding: 5px 40px!important;
+    margin-top: 30px!important;
+}
+#Shit_New_Category_Part1 input, #Shit_New_Category_Part2 input, #Shit_New_Category_Part2 select, #Shit_New_Category_Part3 input, #Shit_New_Category_Part3 select {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    padding: 2px 10px;
+    font-size: 15px;
+    background-color: #eaeaea;
+}
+
+.T_input_Shit_Delete_Category_PAD select, .T_input_Shit_Delete_Category_PAD input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    height: 40px;
+    text-align: center;
+    padding: 2px 10px;
+    font-size: 15px;
+    margin-top: 10px;
+    background-color: #eaeaea;
+}
+
+#Shit_New_Category_Part2 select, #Shit_New_Category_Part3 select {
+    margin-top: 10px;
+}
+
+#Shit_New_Category_Part1 button, #Shit_New_Category_Part2 button, #Shit_New_Category_Part3 button {
+    width: 100%;
+    border: none;
+    height: 35px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #6a61ff;
+}
+
+.T_input_Shit_Delete_Category_PAD button {
+    width: 100%;
+    border: none;
+    height: 35px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #ffe460;
+}
+
+#Shit_New_Category_Part2 button {
+    background-color: #8eff86;
+}
+
+#Shit_New_Category_Part3 button {
+    background-color: #ca61ff;
+}
+
+#Shit_New_Category_Part2 {
+    width: 33.33%;
+    height: 100%;
+    float: right;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ececec;
+}
+
+#Shit_New_Category_Part3 {
+    width: 33.33%;
+    height: 100%;
+    padding: 20px;
+    float: right;
+    box-sizing: border-box;
+    border-right: 1px solid #ececec;
+}
+
+#Shit_Delete_Category {
+    width: 50%;
+    height: 300px;
+    background-color: #5ca958;
+}
+
+#Show_Hide_Shit_A {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#Show_Hide_Shit_B {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    z-index: 12;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#Shit_Delete_Category_PAD {
+    width: 100%;
+    height: 350px;
+    background-color: white;
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 300px;
+    left: 0;
+}
+
+#P_T_input_Shit_Delete_Category_PAD {
+    width: 30%;
+    height: auto;
+    margin: auto;
+}
+
+.btn_set {
+    padding: 5px 20px;
+    border: 1px solid #aff7ff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    margin: 20px 20px;
+
+}
+
+.btn_set:hover {
+    color: #303030;
+    background-color: #aff7ff;
+}
+
+#C_T_input_Shit_Delete_Category_PAD {
+    display: none;
+}
+
+#I_T_input_Shit_Delete_Category_PAD {
+    display: none;
+}
+
+#Map_New_Product {
+    width: 98%;
+    margin: 65px auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#Shit_New_Product {
+    margin-top: 20px;
+}
+
+.LE {
+    padding: 2px 10px;
+    border-radius: 3px;
+    color: #5ca958;
+
+    border: 1px solid #5ca958;
+    /*    background-color: #5ca958;*/
+}
+.LE_F {
+    padding: 2px 10px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 20px 10px;
+        background-color: #5ca958;
+}
+.LE_F a{
+    color: white!important;
+    text-decoration: none!important;
+}
+a:hover{
+    color: white!important;
+    text-decoration: none!important;
+}
+#LE_1, #LE_2, #LE_3 ,#LE_4,#LE_5,#LE_6{
+    width: 600px;
+    height: auto;
+    box-shadow: rgba(105, 105, 105, 0.5) 1px 1px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+}
+
+#LE_2 {
+    display: none;
+}
+#LE_3 {
+    display: none;
+}
+#LE_4 {
+    display:none;
+}
+#LE_5 {
+    display:none;
+}
+#LE_6 {
+    display:none;
+}
+#LE_1 input, #LE_1 textarea , #LE_1 select{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    outline: none;
+    margin-top: 30px;
+    background-color: unset;
+    border-radius: 5px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+}
+label{
+    margin-top: 10px;
+}
+input{
+    direction: rtl;
+}
+ #LE_1 select{
+     margin-top: 5px!important;
+ }
+#LE_1 .LE_BU {
+    margin-top: 20px;
+    background-color: unset;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #51a2ff;
+    padding: 3px 10px;
+}
+
+
+#LE_2 input, #LE_2 textarea , #LE_2 select , #Shit_New_Brand input  , #Shit_Edit_Brand input , #Shit_Edit_Brand select, #Shit_Edit_Brand textarea{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    outline: none;
+    margin-top: 30px;
+    background-color: unset;
+    border-radius: 5px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+}
+
+#LE_2 .LE2_BU {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: unset;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #51a2ff;
+    padding: 3px 10px;
+}
+
+
+
+#LE_3 input, #LE_3 select  {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    outline: none;
+    margin-top: 30px;
+    background-color: unset;
+    border-radius: 5px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+}
+
+#LE_3 .LE2_BU {
+    margin-top: 20px;
+    background-color: unset;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #51a2ff;
+    padding: 3px 10px;
+}
+
+#LE_4 input, #LE_4 select  {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    outline: none;
+    margin-top: 30px;
+    background-color: unset;
+    border-radius: 5px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+}
+
+#LE_4 .LE2_BU {
+    margin-top: 20px;
+    background-color: unset;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #51a2ff;
+    padding: 3px 10px;
+}
+#LE2_BU{
+    margin-top: 20px;
+    background-color: unset;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #51a2ff;
+    padding: 3px 10px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+#LE_5 input, #LE_5 select  {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    outline: none;
+    margin-top: 30px;
+    background-color: unset;
+    border-radius: 5px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 40px;
+    border: 1px solid rgba(153, 153, 153, 0.5);
+}
+
+#LE_5 .LE3_BU {
+    margin-top: 20px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #5ca958;
+    color: white;
+    padding: 3px 10px;
+    border: none;
+}
+.LE_BU{
+    cursor: pointer;
+}
+.Shit_BTn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#PageAddAttr , #PageAddPhoto{
+    width: 300px;
+    height:auto;
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.5) 1px 1px 10px;
+    position: absolute;
+    top: 50%;
+    display: none;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.ImageOneProduct{
+    cursor: pointer;
+}
+#PageAddAttr input ,#PageAddPhoto input{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #c8c8c8;
+    outline: none;
+}
+#ViewProduct{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(107, 107, 107, 0.5);
+    z-index: 25;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    display: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transform: translate(-50% , -50%);
+}
+#ClosePageViewImage{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: white;
+}
+@media all and (max-width: 900px ) and (min-width: 300px) {
+    #View_Set {
+        display: unset;
+        align-items: unset;
+        justify-content: unset;
+    }
+
+    #View_Set span {
+        width: 100%;
+    }
+}
