@@ -10,90 +10,42 @@
     <link rel="stylesheet" href="{{url('/css/admin/shit.css')}}">
     <script src="{{url('/js/Tools/jquery-3.5.1.min.js')}}"></script>
     <script src="{{url('/js/Admin/java.js')}}"></script>
-    {!! htmlScriptTagJsApi() !!}
 </head>
 <body>
 <div id="box">
     <div id="to_box">
         <div id="title">
             <span style="float: left">ایران شاپ</span>
-            <span style="float: right"><a href="{{route('login')}}">ورود <i class="fas fa-user"></i></a></span>
+            <span style="float: right"><a>تکمیل مشخصات کاربری <i class="fas fa-user"></i></a></span>
         </div>
+        @include('Message')
         <div id="Shit_Register">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('CompletionProfile') }}">
                 @csrf
 
                 <div class="form-group row">
-                    <label for="name"
-                           class="col-md-4 col-form-label text-md-right">{{ __('نام کاربری') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="name" type="text"
-                               class="form-control @error('name') is-invalid @enderror" name="name"
-                               value="{{ old('name') }}">
-
-                        @error('name')
-                        <span class="invalid-feedback err_alert" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
+                    <label for="CodeMil" class="col-md-4 col-form-label text-md-right">{{ __('کد ملی') }}</label>
+                    <input type="text" id="CodeMil" name="CodeMil">
                 </div>
-
                 <div class="form-group row">
-                    <label for="email"
-                           class="col-md-4 col-form-label text-md-right">{{ __('ایمیل') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="email" type="email"
-                               class="form-control @error('email') is-invalid @enderror"
-                               name="email"
-                               value="{{ old('email') }}">
-
-                        @error('email')
-                        <span class="invalid-feedback err_alert" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
+                    <label for="Phone" class="col-md-4 col-form-label text-md-right">{{ __('تلفن') }}</label>
+                    <input type="number" id="Phone" name="Phone">
                 </div>
-
                 <div class="form-group row">
-                    <label for="password"
-                           class="col-md-4 col-form-label text-md-right">{{ __('پسورد') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="password" type="password"
-                               class="form-control @error('password') is-invalid @enderror"
-                               name="password">
-
-                        @error('password')
-                        <span class="invalid-feedback err_alert" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                    </div>
+                    <label for="Sex" class="col-md-4 col-form-label text-md-right">{{ __('جنسیت') }}</label>
+                    <br>
+                    <label for="Sex1">مرد</label>
+                    <input type="radio" id="Sex1" name="Sex" value="1">
+                    <br>
+                    <label for="Sex0">زن</label>
+                    <input type="radio" id="Sex0" name="Sex" value="0">
+                    <br>
+                    <br>
                 </div>
-
                 <div class="form-group row">
-                    <label for="password-confirm"
-                           class="col-md-4 col-form-label text-md-right">{{ __('تکرار پسورد') }}</label>
-
-                    <div class="col-md-6">
-                        <input id="password-confirm" type="password" class="form-control"
-                               name="password_confirmation">
-                    </div>
+                    <label for="Mobile" class="col-md-4 col-form-label text-md-right">{{ __('موبایل') }}</label>
+                    <input type="number" id="Mobile" name="Mobile">
                 </div>
-                <div style="margin-top: 10px" class="col-md-6">
-                    {!! htmlFormSnippet([
-        "size" => "100%",
-]) !!}
-                </div>
-                @error('g-recaptcha-response')
-                <span class="invalid-feedback err_alert" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                @enderror
                 <div class="form-group row mb-0">
                     <div class="col-md-6 offset-md-4">
                         <button type="submit" class="btn btn-primary">
@@ -106,7 +58,6 @@
         </div>
     </div>
 </div>
-<a href="{{url('/auth/googel')}}">ورود با گوگل</a>
 </body>
 </html>
 

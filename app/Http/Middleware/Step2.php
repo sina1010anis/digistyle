@@ -17,11 +17,12 @@ class Step2 extends Middleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $true=true;
-        if ($true){
+        if (auth()->user()->CodeMil == 0 || auth()->user()->Phone == 0 || auth()->user()->Mobile == 0){
             return redirect(route('CompletionRegistr'));
+        }else{
+            return $next($request);
         }
 /*        auth()->user()->CodeMil == 0 || auth()->user()->Phone == 0 || auth()->user()->Mobile == 0*/
-        return $next($request);
+
     }
 }

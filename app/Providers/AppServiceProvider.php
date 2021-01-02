@@ -12,6 +12,8 @@ use App\Models\Off;
 use App\Models\Parenta;
 use App\Models\products;
 use App\Models\slider;
+use Illuminate\Auth\Notifications\VerifyEmail;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -86,5 +88,9 @@ class AppServiceProvider extends ServiceProvider
 
         $CountViewAllCartsUser=Carts::orderBy('id'  , 'DESC')->get();
         View::share('CountViewAllCartsUser' , $CountViewAllCartsUser);
+
+        VerifyEmail::toMailUsing(function ($n,$url){
+            return (new MailMessage)->subject('تاییده ایمیل')->view('Front.Mail.Verify_Mail' , compact('url'));
+        });
     }
 }

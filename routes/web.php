@@ -28,8 +28,15 @@ Route::post('/New/Comment/Products/{id}' , [\App\Http\Controllers\IndexControlle
 Route::post('/New/Comment/Products/Send/{id}' , [\App\Http\Controllers\IndexController::class,'NewCommentProductsSend'])->name('NewCommentProductsSend');
 Route::get('/New/Product/Cart/User/{Class}' , [\App\Http\Controllers\IndexController::class,'SaveProductCart'])->name('SaveProductCart');
 Route::get('/Delete/Product/Cart/User/{id}' , [\App\Http\Controllers\IndexController::class,'DeleteProductCart'])->name('DeleteProductCart');
-Route::get('/Buy/Product/To/Cart' , [\App\Http\Controllers\IndexController::class,'BuyProductCart'])->name('BuyProductCart')->middleware('CompletionRegistr');
+Route::get('/Buy/Product/To/Cart' , [\App\Http\Controllers\IndexController::class,'BuyProductCart'])->middleware(['CompletionRegistr' , 'verified'])->name('BuyProductCart');
+Route::get('/Step/Two/Select/Address' , [\App\Http\Controllers\IndexController::class,'SelectAddressBuyStepTow'])->middleware(['CompletionRegistr' , 'verified'])->name('SelectAddressBuyStepTow');
+Route::post('/Step/Three/Buy/Products' , [\App\Http\Controllers\IndexController::class,'StepThreeBuyProducts'])->middleware(['CompletionRegistr' , 'verified'])->name('StepThreeBuyProducts');
+Route::post('/New/Address/' , [\App\Http\Controllers\IndexController::class,'NewAddress'])->middleware(['CompletionRegistr' , 'verified'])->name('NewAddress');
 Route::get('/CompletionRegistr' , [\App\Http\Controllers\IndexController::class,'CompletionRegistr'])->name('CompletionRegistr');
+Route::post('/CompletionProfile' , [\App\Http\Controllers\IndexController::class,'CompletionProfile'])->name('CompletionProfile');
+Route::get('/Buy/F' , [\App\Http\Controllers\IndexController::class,'request'])->name('requestBuy');
+Route::get('/Verify/Bank', [\App\Http\Controllers\IndexController::class ,'VerifyBank'])->name('VerifyBank');
+Route::get('/Edit/Send/Status/Products', [\App\Http\Controllers\IndexController::class ,'EditSendStatusProducts'])->name('EditSendStatusProducts');
 
 Route::get('/auth/googel' , [\App\Http\Controllers\GoogleAuthController::class,'ToGoogle'])->name('ToGoogel_Register');
 Route::get('/google' , [\App\Http\Controllers\GoogleAuthController::class,'BackGoogle'])->name('BackGoogel_Register');
@@ -73,6 +80,9 @@ Route::prefix('admin')->middleware(['auth' , 'Roule'])->group(function (){
     Route::get('/Comments/View' , [\App\Http\Controllers\CommentsViewAdmin::class,'CommentsView'])->name('CommentsView_admin');
     Route::get('/Edit/Comments/One/{id}' , [\App\Http\Controllers\CommentsViewAdmin::class,'EditCommentsOne'])->name('EditCommentsOne_admin');
     Route::get('/Delete/Comments/One/{id}' , [\App\Http\Controllers\CommentsViewAdmin::class,'DeleteCommentsOne'])->name('DeleteCommentsOne_admin');
+    Route::get('/View/Oreders/User' , [\App\Http\Controllers\OredersUserAdmin::class,'Index'])->name('ViewOredersUser_admin');
+    Route::get('/View/One/Oreders/User/{id}' , [\App\Http\Controllers\OredersUserAdmin::class,'Show'])->name('ViewOredersOneUser_admin');
+    Route::get('/Edit/Send/Status/Products/{id}', [\App\Http\Controllers\OredersUserAdmin::class ,'EditSendStatusProducts'])->name('EditSendStatusProducts_admin');
 
 });
 Route::post('/admin/product/New/LE1/' , [\App\Http\Controllers\ProductAdminController::class,'ProductNewLE1'])->middleware(['auth' , 'Roule'])->name('ProductNewLE1_admin');
@@ -88,6 +98,6 @@ Route::post('/admin/New/Brand' , [\App\Http\Controllers\BrendController::class,'
 Route::get('/T/D' , function (){return view('welcome');});
 Route::get('/TS/D' ,[\App\Http\Controllers\NewCategory::class,'Test']);
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

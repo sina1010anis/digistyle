@@ -43,7 +43,11 @@
                 <li><a href="{{route('category_admin')}}">ایجاد دسته جدید</a></li>
             </ul>
         </li>
-        <li>مدریت سفارشات <i id="Icon_View_Menu" class="fas fa-cash-register"></i></li>
+        <li>
+            <a href="{{route('ViewOredersUser_admin')}}">
+                مدریت سفارشات <i id="Icon_View_Menu" class="fas fa-cash-register"></i>
+            </a>
+        </li>
         <li class="item_menu">مدریت برند ها <i id="Icon_View_Menu" class="fab fa-diaspora"></i>
             <ul class="ul_menu_right_panel_admin_to_ul_A">
                 <li><a href="{{route('BrandViewPage_admin')}}">مشاهده برند</a></li>

@@ -1,4 +1,16 @@
 $(document).ready(function () {
+    $(".ImeBuyFdiv").hover(function (){
+        $(this).find('span').stop().slideDown(200)
+    },function (){
+        $(this).find('span').stop().slideUp(200)
+
+    })
+    $(".btnNewAddress").click(function (){
+        $("#PageNewAddress").fadeIn(200);
+    })
+    $("#ClocePageNewAddress").click(function (){
+        $("#PageNewAddress").fadeOut(200);
+    })
     $(".Send-Message-One-Product").click(function (){
        $(this).parents('li').find('form').stop().slideToggle(200);
     });

@@ -926,6 +926,107 @@
     background: #ff4444;
 
 }
+#Err_Buy{
+    width: 100%;
+    height: 500px;
+    background: #ffffff;
+}
+#Map_Buy_Product{
+    width: 100%;
+    margin-top: 100px;
+    height: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #9898ff;
+}
+#countinerClass{
+    width: 100%;
+    max-width: 1100px;
+    height: 30px;
+    margin: 25px auto 100px auto;
+}
+#NewAddress{
+    padding: 30px 0;
+    border: 1px solid #4f4f4f;
+}
+#PageNewAddress input{
+    width: 100%;
+    height: 35px;
+    border: 1px solid #bababa;
+}
+.al_ri{
+    padding: 30px 0!important;
+    text-align: right!important;
+}
+.al_le{
+    padding: 30px 0!important;
+    text-align: left!important;
+}
+.border_bl{
+    padding: 10px!important;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+}
+.ImeBuyF{
+    width: 300px;
+    height: 300px;
+}
+.DecAzImgBuyF{
+    width: 200px;
+    height: auto;
+    background: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 20;
+    position: absolute;
+    display: none;
+    top: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(83, 83, 83, 0.5);
+}
+#PageNewAddress{
+    width: 100%;
+    z-index: 20;
+    height: auto;
+    display: none;
+    max-width: 500px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px rgba(107, 107, 107, 0.5);
+    background: #ffffff;
+}
+#TotalAllProducts{
+    padding: 20px;
+    font-size: 20px;
+    background: #f1f1f1;
+    box-shadow: 1px 1px 10px rgba(121, 121, 121, 0.5);
+    text-align: center;
+}
+.off{
+    border: 2px solid #e3e3e3!important;
+    color: #838383!important;
+}
+#Map_Buy_Product span{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    color: #323232;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    margin: 0 50px;
+    background: white;
+    border: 4px solid #9898ff;
+}
+.tr_table_Buy td{
+    position: relative;
+}
+.tr_table_Buy img{
+    width: 150px;
+    text-align: center;
+    margin: auto;
+    height: 150px;
+}
 @media all and (max-width: 900px)  {
     #ViewTotalPrice{
         opacity: 0;
