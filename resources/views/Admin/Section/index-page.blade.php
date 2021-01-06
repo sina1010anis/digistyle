@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{url('/css/admin/shit.css')}}">
     <script src="{{url('/js/Tools/jquery-3.5.1.min.js')}}"></script>
     <script src="{{url('/js/Admin/java.js')}}"></script>
+    <script src="{{url('Tools/zingchart.min.js')}}"></script>
 </head>
 <body>
 <div id="box">

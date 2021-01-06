@@ -1027,6 +1027,137 @@
     margin: auto;
     height: 150px;
 }
+#ImageAndNameUser{
+    position: relative;
+    margin-top: 20px;
+}
+#ImageProfile{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 20px;
+    border-radius: 50%;
+}
+#ImageProfile img{
+    width: 60px;
+    cursor: pointer;
+    height: 60px;
+    border-radius: 50%;
+}
+#NameProfile span{
+    position: absolute;
+    right: 100px;
+    top: 13px;
+}
+#BoxViewSearch{
+    min-width: 170px;
+    max-width: 170px;
+    text-align: center;
+    background: #d9d9d9;
+    position: absolute;
+    z-index: 20;
+}
+#ViewOrderUserPanelOne a{
+    color: #6f6fff!important;
+}
+.ViewRSOrders{
+    width: 500px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px rgba(198, 198, 198, 0.5);
+    background: #ffffff;
+    display: none;
+}
+#PageSelectImageProfile{
+    width: 500px;
+    height:auto;
+    display: none;
+    background: white;
+    box-shadow: 1px 1px 10px rgba(195, 195, 195, 0.5);
+}
+#ViewOrderUserPanelOne a{
+    cursor: pointer;
+}
+.ViewRSOrders p{
+    margin-top: 30px;
+}
+#ViewOrderUserPanelOne a:hover {
+    color: #5757ff!important;
+}
+#BoxViewSearch a{
+    margin-top: 100px;
+}
+#MenuPanelUserDis{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    background: #0a3fcd;
+}
+#MenuPanelUserDis #Menu{
+    float: right;
+    width: 25%;
+    height: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+}
+#formEditProfileUser{
+    width: 50%;
+    margin:  20px auto;
+}
+#formEditProfileUser input[type=text]{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #b3b3b3;
+}
+#PageAMenuUser td{
+    text-align: center;
+    direction: rtl;
+
+}
+#PageAMenuUser a:hover{
+    color: white!important;
+}
+#MenuPanelUserDis #Menu a{
+    width: 100%;
+    margin: 20px 5px;
+    text-align: right;
+    display: block;
+}
+#MenuPanelUserDis #Dis{
+    float: left;
+    width: 75%;
+    height: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+#Option{
+    width: auto;
+    height: 68px;
+}
+#Option > span{
+    font-size: 13px;
+    text-align: center;
+    line-height: 68px;
+    color: #4a4a4a;
+    padding: 20px 20px;
+    border-right: 1px solid #bcbcbc;
+}
+@media all and (max-width: 770px)  {
+    #MenuPanelUserDis #Menu{
+        width: 100%;
+    }
+    #MenuPanelUserDis #Dis{
+        width: 100%;
+    }
+}
 @media all and (max-width: 900px)  {
     #ViewTotalPrice{
         opacity: 0;

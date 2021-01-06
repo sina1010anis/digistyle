@@ -444,4 +444,16 @@ class IndexController extends Controller
 
         }
     }
+    public function SearchProducts(Request $request){
+        if ($request->name != ''){
+            $BoxSearch='';
+            $products=products::where('Name' , 'LIKE' , '%'.$request->name.'%')->get();
+            foreach ($products as $i){
+                $BoxSearch.='<a href="'.route('ViewProductOnePage' , $i->Name).'">'.$i->Name.'</a>'.'<br><br><br>';
+            }
+            return $BoxSearch;
+        }
+
+
+    }
 }

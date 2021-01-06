@@ -1,6 +1,6 @@
 <div id="MenuIndex">
     <span class="ItemMenuIndex" id="ItemRight">
-        <a href="{{route('login')}}">
+        <a href="{{route('UserPanelIndex_user')}}">
           ناحیه کاربری <i class="fas fa-user-circle"></i>
         </a>
     </span>
@@ -50,8 +50,11 @@
     <span id="SectionIconWebLeft" class="btn_Border_Black_Small">دانلود اپلیکیشن</span>
     <span id="SectionIconWebRight">
         <form action="">
-            <input type="text" placeholder="چی میخوای !">
+            <input class="inputSearchHeaderIndexPage" type="text" placeholder="چی میخوای !">
         </form>
+        <span id="BoxViewSearch">
+
+        </span>
     </span>
     <b><a style="color: #3e3e3e;font-size: 30px" href=""><span class="object_center_span">DIGISTYLE</span></a></b>
 </div>

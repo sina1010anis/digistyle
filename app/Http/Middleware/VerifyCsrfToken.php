@@ -23,6 +23,8 @@ class VerifyCsrfToken extends Middleware
         '/admin/product/New/Photo/One',
         '/admin/Slid/New/Photo',
         '/admin/Ban/New/Photo',
+        '/Rout/Search/Products',
+        '/New/Image/Profile/User',
 
     ];
 }

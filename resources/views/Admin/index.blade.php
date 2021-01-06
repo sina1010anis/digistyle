@@ -15,7 +15,7 @@
                     کابران فعال
                 </p>
                 <p class="View_SET_P" align="center">
-                    20
+                    {{$users->count()}}
                 </p>
             </span>
         <span>
@@ -26,7 +26,7 @@
                     سفارشات
                 </p>
                 <p class="View_SET_P" align="center">
-                    18
+                    {{$order->count()}}
                 </p>
         </span>
         <span>
@@ -48,10 +48,11 @@
                     درامد
                 </p>
                 <p class="View_SET_P" align="center">
-                    20
+                    {{$ShitTotalPriceToWebSit}}
                 </p>
         </span>
     </div>
+    <div id="myChart"></div>
     <div class="View_Table_Panel_admin" id="View_Comments" dir="rtl">
         <h3 align="center">نظرات کاربران</h3>
         <table class="table table-striped">
@@ -59,7 +60,6 @@
             <tr>
                 <th>شناسه</th>
                 <th>نام</th>
-                <th>ایمیل</th>
                 <th>متن</th>
                 <th>فرزند</th>
                 <th>تاریخ</th>
@@ -68,36 +68,37 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td align="left">1</td>
-                <td  align="left">Mark</td>
-                <td  align="left">Otto</td>
-                <td  align="left">@mdo</td>
-                <td  align="left">1</td>
-                <td  align="left">Mark</td>
-                <td  align="left">Otto</td>
-                <td  align="left">@mdo</td>
-            </tr>
-            <tr>
-                <td align="left">1</td>
-                <td  align="left">Mark</td>
-                <td  align="left">Otto</td>
-                <td  align="left">@mdo</td>
-                <td  align="left">1</td>
-                <td  align="left">Mark</td>
-                <td  align="left">Otto</td>
-                <td  align="left">@mdo</td>
-            </tr>
-            <tr>
-                <td align="left">1</td>
-                <td  align="left">Mark</td>
-                <td  align="left">Otto</td>
-                <td  align="left">@mdo</td>
-                <td  align="left">1</td>
-                <td  align="left">Mark</td>
-                <td  align="left">Otto</td>
-                <td  align="left">@mdo</td>
-            </tr>
+            @foreach($comment as $i)
+                <tr>
+                    <td align="left">{{$i->id}}</td>
+                    <td  align="left">{{$i->Name}}</td>
+                    <td title="{{$i->Text}}" align="left">
+                        <?php
+                        echo mb_substr($i->Text , 0 , 20) , '...';
+                        ?>
+                    </td>
+                    @if($i->parent_id == 0)
+                        <td style="color: green" align="left">متن اصلی</td>
+                    @else
+                        <td  align="left">{{$i->parent_id}}</td>
+                    @endif
+                    <td  align="left">{{jdate($i->created_at)}}</td>
+                    @if($i->Status ==0)
+                        <td  align="left">
+                            <a class="btn_GREEN" href="{{route('EditCommentsProducts_admin' , $i->id)}}">
+                            نمایش بده
+                            </a>
+                        </td>
+                    @else
+                        <td  align="left">
+                            <a class="btn_RED" href="{{route('EditCommentsProducts_admin' , $i->id)}}">
+                                نمایش بده
+                            </a>
+                        </td>
+                    @endif
+                    <td  align="left">برای محصولات</td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
@@ -163,5 +164,22 @@
             </tbody>
         </table>
     </div>
+    <script type="text/javascript">
+        zingchart.render({
+            id: 'myChart',
+            data: {
+                type: 'line',
+                series: [
+                    @foreach($ordersZing as $i)
+                    { values: [
+                            {{$i->id_user}},
+                            {{$i->sums}},
+                        ] },
+                        @endforeach
 
+                ]
+
+            }
+        });
+    </script>
 @endsection

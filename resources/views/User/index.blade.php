@@ -1,2 +1,5 @@
-<?php
-echo 'پنل کاربری'
+@extends('User.Section.index')
+
+@section('index')
+
+@endsection

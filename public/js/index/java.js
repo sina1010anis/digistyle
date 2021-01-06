@@ -1,4 +1,47 @@
 $(document).ready(function () {
+    $("#ImageProfile").click(function (){
+        $("#PageSelectImageProfile").fadeToggle(200);
+    });
+    $("#FormSelectImageProfile").on('submit' , function (){
+        var data= new FormData(this);
+        $.ajax({
+            url:'/New/Image/Profile/User',
+            data:data,
+            type:"POST",
+            cache:false,
+            processData:false,
+            contentType:false,
+        }).done(function (data){
+            alert(data);
+            if (data == 'ERR:UploadSize'){
+                alert('فایل باید کمتر از 2 مگ باشد');
+                                window.location.href='http://localhost:8000/User/View/Comments';
+
+            }if (data == 'ERR:UploadType'){
+                alert('فرمت رسالی باید png باشد');
+                                window.location.href='http://localhost:8000/User/View/Comments';
+
+            }if (data == 'Uploaded'){
+                alert('با موفقیت اپلود شد');
+                                window.location.href='http://localhost:8000/User/View/Comments';
+
+            }
+        })
+    })
+    $(".ViewOrderBTN").click(function (){
+        var id = $(this).attr('id');
+        $("#ViewRSOrders"+id).stop().fadeToggle(200);
+    });
+    $(".inputSearchHeaderIndexPage").keyup(function (){
+       var search=$(this).val();
+       $.ajax({
+           url:'/Rout/Search/Products',
+           data: {name:search},
+           type:"POST",
+       }).done(function (data){
+           $("#BoxViewSearch").html(data);
+       });
+    });
     $(".ImeBuyFdiv").hover(function (){
         $(this).find('span').stop().slideDown(200)
     },function (){

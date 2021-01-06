@@ -37,6 +37,18 @@ Route::post('/CompletionProfile' , [\App\Http\Controllers\IndexController::class
 Route::get('/Buy/F' , [\App\Http\Controllers\IndexController::class,'request'])->name('requestBuy');
 Route::get('/Verify/Bank', [\App\Http\Controllers\IndexController::class ,'VerifyBank'])->name('VerifyBank');
 Route::get('/Edit/Send/Status/Products', [\App\Http\Controllers\IndexController::class ,'EditSendStatusProducts'])->name('EditSendStatusProducts');
+Route::post('/Rout/Search/Products', [\App\Http\Controllers\IndexController::class ,'SearchProducts'])->name('SearchProducts');
+Route::post('/New/Image/Profile/User', [\App\Http\Controllers\UserPanelController::class ,'NewImageProfileUser']);
+
+Route::prefix('User')->middleware(['auth'])->group(function (){
+    Route::post('/Edit/Profile/Create/User/{id}', [\App\Http\Controllers\UserPanelController::class ,'EditProfileCreateUser'])->name('EditProfileCreateUser_user');
+    Route::get('/', [\App\Http\Controllers\UserPanelController::class ,'index'])->name('UserPanelIndex_user');
+    Route::get('/Edit/Profile', [\App\Http\Controllers\UserPanelController::class ,'EditProfile'])->name('EditProfile_user');
+    Route::get('/View/Orders', [\App\Http\Controllers\UserPanelController::class ,'ViewOrders'])->name('ViewOrders_user');
+    Route::get('/View/Cart', [\App\Http\Controllers\UserPanelController::class ,'ViewCart'])->name('ViewCart_user');
+    Route::get('/View/Comments', [\App\Http\Controllers\UserPanelController::class ,'ViewComments'])->name('ViewComments_user');
+});
+
 
 Route::get('/auth/googel' , [\App\Http\Controllers\GoogleAuthController::class,'ToGoogle'])->name('ToGoogel_Register');
 Route::get('/google' , [\App\Http\Controllers\GoogleAuthController::class,'BackGoogle'])->name('BackGoogel_Register');
@@ -83,8 +95,9 @@ Route::prefix('admin')->middleware(['auth' , 'Roule'])->group(function (){
     Route::get('/View/Oreders/User' , [\App\Http\Controllers\OredersUserAdmin::class,'Index'])->name('ViewOredersUser_admin');
     Route::get('/View/One/Oreders/User/{id}' , [\App\Http\Controllers\OredersUserAdmin::class,'Show'])->name('ViewOredersOneUser_admin');
     Route::get('/Edit/Send/Status/Products/{id}', [\App\Http\Controllers\OredersUserAdmin::class ,'EditSendStatusProducts'])->name('EditSendStatusProducts_admin');
-
+    Route::get('/Edit/Comments/User/Products/{id}', [\App\Http\Controllers\AdminController::class ,'EditCommentsProducts'])->name('EditCommentsProducts_admin');
 });
+Route::get('/report', [\App\Http\Controllers\AdminController::class ,'report'])->name('report_admin');
 Route::post('/admin/product/New/LE1/' , [\App\Http\Controllers\ProductAdminController::class,'ProductNewLE1'])->middleware(['auth' , 'Roule'])->name('ProductNewLE1_admin');
 Route::post('/admin/product/New/LE2/' , [\App\Http\Controllers\ProductAdminController::class,'ProductNewLE2'])->middleware(['auth' , 'Roule'])->name('ProductNewLE2_admin');
 Route::post('/admin/product/New/LE3/' , [\App\Http\Controllers\ProductAdminController::class,'ProductNewLE3'])->middleware(['auth' , 'Roule'])->name('ProductNewLE3_admin');
